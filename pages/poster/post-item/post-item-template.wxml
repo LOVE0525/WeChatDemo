@@ -1,0 +1,13 @@
+<template name="postItem">
+  <view class="post_item">
+    <view class="post_item1">
+      <image class="post_item_image" src="{{post_imageUrl}}"></image>
+    </view>
+    <view class="post_item2">
+      <view class="post_item_title">
+        <text>{{post_title}}</text>
+      </view>
+      <view class="post_item_desc">{{post_desc}}</view>
+    </view>
+  </view>
+</template>

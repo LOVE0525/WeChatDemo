@@ -1,0 +1,22 @@
+
+.gird {
+  display: flex;
+}
+
+.gird-cell {
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+  background-color: #efefef;
+  text-align: center;
+  margin: 5px 2px;
+}
+.gird-cell.u-full
+{
+  flex: 0 0 100%;
+}
+
+.gird-cell.u-1of2
+{
+  flex: 0 0 50%;
+}

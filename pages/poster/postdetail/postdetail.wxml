@@ -1,0 +1,33 @@
+<text>这是详情页面{{postId}}</text>
+<contact-button type="default-light" size="20" session-from="weapp">联系客服
+</contact-button>
+<view class="first-face">
+  <view class="second-face">
+    <view class="second-pip-2">
+      &
+    </view>
+  </view>
+</view>
+<view class="gird">
+  <view class="gird-cell">1/2</view>
+  <view class="gird-cell">1/2</view>
+</view>
+<view class="gird">
+  <view class="gird-cell">
+    full
+  </view>
+</view>
+<view class="gird">
+  <view class="gird-cell">
+    1/3
+  </view>
+  <view class="gird-cell">
+    1/3
+  </view>
+  <view class="gird-cell">
+    1/3
+  </view>
+</view>
+<view class="gird">
+  <view class="gird-cell u-1of2">哈哈</view>
+</view>

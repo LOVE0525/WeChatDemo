@@ -1,0 +1,7 @@
+<view class="container_one">
+  <image   style='margin-top: 100rpx;' src="http://wx.qlogo.cn/mmhead/SlWGvyryTEYE2biaD6hnEE4aGP1ia6kdrkheDGsbPwBBU/132"  class='user_image'></image>
+  <text  style='margin-top: 100rpx;'>hello word</text>
+  <view style='margin-top: 100rpx;' bindtap="openPoster" >
+    <text>开启小程序之旅</text>
+  </view>
+</view>

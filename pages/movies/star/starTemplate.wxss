@@ -1,0 +1,16 @@
+.star_container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.star_image image {
+  width: 16rpx;
+  height: 16rpx;
+}
+
+.star_text {
+  margin-left: 5px;
+  color: #666;
+  font-size: 10px;
+}

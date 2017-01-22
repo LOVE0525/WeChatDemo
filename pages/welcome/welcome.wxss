@@ -1,0 +1,25 @@
+.user_image
+{
+   width: 100rpx;
+   height: 100rpx;
+   border-radius:50rpx;
+}
+.container_one
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+text{
+
+    font-family:sans-serif;
+    font-size: 20px;
+   
+
+}
+Page
+{
+    background-color: #1499f8;
+   height: 100%;
+}

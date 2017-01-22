@@ -1,0 +1,20 @@
+<import src="post-item/post-item-template.wxml"/>
+<view>
+  <swiper vertical="{{ture}}" indicator-dots="true" indicator-active-color="#607fa6" autoplay="true" bindchange="tabchange">
+    <swiper-item >
+      <image class="banner" src="http://mmbiz.qpic.cn/mmbiz_jpg/WRGz2LWLARCxFmBAzC0OcB9pFNdy855yZR9B3ndibBwvVIBpnD7TicyjHmu8lHeKFbQqcOuYQxlbxWtatAwbicEBQ/0?wx_fmt=jpeg"></image>
+    </swiper-item>
+    <swiper-item >
+      <image class="banner" src="http://mmbiz.qpic.cn/mmbiz_png/WRGz2LWLARDPc3vovB0l9hVO2mPHpeaqvdbvI5O8N6I3eNVjEbVSRuxIpsaLYI9iahlvpV41VBWP0Jy1IAYgicXQ/0?wx_fmt=png"></image>
+    </swiper-item>
+    <swiper-item >
+      <image class="banner" src="http://mmbiz.qpic.cn/mmbiz_jpg/WRGz2LWLARCQibAYk1mKiansc0dGcdibPqCcBibuqCEwzGWkREKV3MLzwAzV3XoShKldIJYV9vAlXFyvk9hE6OqicPw/0?wx_fmt=jpeg"></image>
+    </swiper-item>
+  </swiper>
+
+  <block wx:for="{{PageData}}">
+  <view catchtap="openDetail" data-postid="{{item.post_id}}">
+    <template is="postItem" data="{{...item}}"/>
+  </view>
+  </block>
+</view>

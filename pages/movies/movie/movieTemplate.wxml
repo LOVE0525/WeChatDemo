@@ -1,0 +1,8 @@
+<improt src="../star/starTemplate.wxml"/>
+<template name="movieTemplate">
+  <view class="movie_container">
+    <image src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2406903891.jpg"></image>
+    <text>恐怖理发店</text>
+    <template is="startemplate"/>
+  </view>
+</template>

@@ -1,0 +1,24 @@
+<view class="container">
+  <scroll-view>
+    <button>click</button>
+  </scroll-view>
+ 
+
+  <switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;"> {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+<button bindtap="addNumberToFront"> Add to the front </button>
+
+<view id='outter' bindtap='handleTap'>
+     outer view
+      <view id='middle' catchtap='handleTap'>
+        middle view
+
+        <view id='inner' bindtap='handleTap'>
+          inner view
+        </view>
+      </view>
+</view>
+</view>

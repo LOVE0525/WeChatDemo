@@ -1,0 +1,42 @@
+{
+  "pages":[
+        "pages/movies/movies",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/main/main",
+     "pages/welcome/welcome",
+     "pages/poster/poster",
+     "pages/poster/postdetail/postdetail",
+     "pages/poster/postdetail2/postdetail2"
+  
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  }
+  ,
+  "tabBar": {
+    "selectedColor":"#da3836",
+    "backgroundColor":"#fff",
+    "borderStyle":"white",
+    "position":"bottom",
+    "color":"#333",
+    "list": [{
+      "pagePath": "pages/main/main",
+      "text": "主页"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "日志"
+    },{
+      "pagePath":"pages/index/index",
+       "text":"onedemo"
+    },{
+      "pagePath":"pages/movies/movies",
+      "text":"电影"
+    }]
+  }
+}

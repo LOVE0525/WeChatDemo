@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view hover-class="test"  bindtap="openMainViewTap" id="test1" data-id='1' data-name='2' name='test'>
+   <button >测试</button>
+  
+  </view>
+   <button bindtap="openOneViewTap"> 打开第一个小程序demo</button>
+</view>

@@ -1,0 +1,9 @@
+@import "post-item/post-item-template.wxss";
+swiper {
+  width: 750rpx;
+  height: 300rpx;
+}
+
+.banner {
+  width: 100%;
+}
