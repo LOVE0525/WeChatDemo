@@ -1,4 +1,2 @@
 <import src="movie-list/movie-list-template.wxml" />
-<template is="movielisttemplate"/>
-<template is="movielisttemplate"/>
-<template is="movielisttemplate"/>
+<template is="movielisttemplate" data="{{...InTheaters}}"/>

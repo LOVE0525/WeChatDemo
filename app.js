@@ -34,6 +34,7 @@ App({
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    doubanApi:"https://api.douban.com"
   }
 })

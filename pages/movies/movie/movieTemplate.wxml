@@ -1,10 +1,10 @@
 <import src="../star/starTemplate.wxml" />
 <template name="movieTemplate">
   <view class="movie_container">
-    <image class="movie_image" src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2406903891.jpg"></image>
+    <image class="movie_image" src="{{images.medium}}"></image>
     <view class="movie_desc">
-      <text class="movie_title">恐怖理发店</text>
-      <template is="startemplate" />
+      <text class="movie_title">{{title}}</text>
+      <template is="startemplate" data="{{rating}}" />
     </view>
   </view>
 </template>
