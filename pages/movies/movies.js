@@ -1,14 +1,18 @@
-// pages/movies/movies.js
+var util = require('../../utils/util.js')
 Page({
   data: {
     InTheaters: {
-       subjects:{}
+      subjects: [],
+      start: 0,
+      count: 20,
+      subjectsEmptyFlag: false
     }
-
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
-    this.GetTheaters();
+    var appInstance = getApp();
+    var url = appInstance.globalData.doubanApi + "/v2/movie/top250?start=0&count=20";
+    this.GetTheaters(url);
   },
   onReady: function () {
     // 页面渲染完成
@@ -22,35 +26,55 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
-  http: function (url) {
-
-  },
-  GetTheaters: function () {
-    wx.showToast({
-
-      icon:"loading",
-      title:"加载中..."
-    });
+  onReachBottom: function () {
+    //加载更多
+    var start = this.data.InTheaters.start;
+    var count = this.data.InTheaters.count;
     var appInstance = getApp();
-    var url = appInstance.globalData.doubanApi + "/v2/movie/in_theaters";
-    var that=this;
-    wx.request({
-      url: url,
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {"Content-Type":"json" }, // 设置请求的 header
-      success: function (res) {
-        that.setData({
-          "InTheaters.subjects":res.data.subjects
+    var url = appInstance.globalData.doubanApi;
+    var intheatersurl = url + "/v2/movie/top250?count=20&start=" + start;
+ 
+    this.GetTheaters(intheatersurl);
+  },
+  onPullDownRefresh: function () {
+    //下拉刷新
+    var appInstance = getApp();
+    var url = appInstance.globalData.doubanApi + "/v2/movie/top250?start=0&count=20";
+    this.setData({
+      "InTheaters.subjectsEmptyFlag": true,
+      "InTheaters.subjects":[]
+    });
+    this.GetTheaters(url);
+  },
+  GetTheaters: function (url) {
+    wx.showToast({
+      icon: "loading",
+      title: "加载中..."
+    });
+    wx.showNavigationBarLoading();
+    util.http(url, (subjects) => {
+      if (this.data.InTheaters.subjectsEmptyFlag) {
+        this.setData({
+          "InTheaters.subjects": subjects
         });
-        wx.hideToast();
-      },
-      fail: function () {
-         console.log("执行失败！");
-      },
-      complete: function () {
-        console.log("complete");
+        this.setData({
+          "InTheaters.start": 20,
+          "InTheaters.subjectsEmptyFlag": false
+        });
       }
+      else {
+        this.setData({
+          "InTheaters.subjects": this.data.InTheaters.subjects.concat(subjects)
+        });
+        this.setData({
+          "InTheaters.start": this.data.InTheaters.start + 20,
+          "InTheaters.subjectsEmptyFlag": false
+        });
+      }
+wx.hideToast();
+wx.hideNavigationBarLoading();
     })
+     
+
   }
 })
